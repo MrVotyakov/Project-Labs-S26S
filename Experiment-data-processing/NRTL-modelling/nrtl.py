@@ -1,3 +1,7 @@
+# Based on code from https://github.com/zmeri/NRTL
+# Original author: Zach Baird (zmeri)
+# Modifications by: Yuriy Grishin, 2026
+# License: GPL-3.0
 import numpy as np
 from CoolProp.CoolProp import PropsSI
 from scipy.optimize import minimize
