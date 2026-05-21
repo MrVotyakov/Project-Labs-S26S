@@ -1,0 +1,166 @@
+atomtypes
+5
+
+begin atom-atomtype
+1 O_ethanol
+2 C2_ethanol
+3 C3_ethanol
+4 H_C_ethanol
+5 H_C_ethanol
+6 H_C_ethanol
+7 H_C_ethanol
+8 H_C_ethanol
+9 H_O_ethanol
+end atom-atomtype
+
+vdwtype LJ
+dihedraltype OPLS
+scaling_1_4_vdw 0.5
+scaling_1_4_charge 0.5
+
+nonbonded
+O_ethanol
+Sigma 3.120
+Epsilon 85.55
+atom_type_charge -0.683
+
+nonbonded
+C2_ethanol
+Sigma 3.500
+Epsilon 33.21
+atom_type_charge 0.145
+
+nonbonded
+C3_ethanol
+Sigma 3.500
+Epsilon 33.21
+atom_type_charge -0.180
+
+nonbonded
+H_C_ethanol
+Sigma 2.500
+Epsilon 15.10
+atom_type_charge 0.060
+
+nonbonded
+H_O_ethanol
+Sigma 0.000
+Epsilon 0.000
+atom_type_charge 0.418
+
+bonds
+O_ethanol C2_ethanol
+Length 1.410
+Constant fixed
+
+bonds
+O_ethanol H_O_ethanol
+Length 0.945
+Constant fixed
+
+bonds
+C2_ethanol C3_ethanol
+Length 1.529
+Constant fixed
+
+bonds
+C2_ethanol H_C_ethanol
+Length 1.090
+Constant fixed
+
+bonds
+C3_ethanol H_C_ethanol
+Length 1.090
+Constant fixed
+
+angles
+C2_ethanol O_ethanol H_O_ethanol
+Angle 108.5
+Constant 27677.1
+
+angles
+C3_ethanol C2_ethanol O_ethanol
+Angle 109.5
+Constant 25161.0
+
+angles
+H_C_ethanol C2_ethanol O_ethanol
+Angle 109.5
+Constant 17612.7
+
+angles
+C3_ethanol C2_ethanol H_C_ethanol
+Angle 110.7
+Constant 18870.7
+
+angles
+H_C_ethanol C2_ethanol H_C_ethanol
+Angle 107.8
+Constant 16606.2
+
+angles
+C2_ethanol C3_ethanol H_C_ethanol
+Angle 110.7
+Constant 18870.7
+
+angles
+H_C_ethanol C3_ethanol H_C_ethanol
+Angle 107.8
+Constant 16606.2
+
+dihedrals
+H_C_ethanol C3_ethanol C2_ethanol O_ethanol
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.979055
+
+dihedrals
+C3_ethanol C2_ethanol O_ethanol H_O_ethanol
+a0 0.000000
+a1 -0.744762
+a2 -0.364005
+a3 1.029262
+
+dihedrals
+H_C_ethanol C2_ethanol O_ethanol H_O_ethanol
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.941400
+
+dihedrals
+H_C_ethanol C2_ethanol C3_ethanol H_C_ethanol
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.627600
+
+charge
+1 -0.683
+
+charge
+2 0.145
+
+charge
+3 -0.180
+
+charge
+4 0.060
+
+charge
+5 0.060
+
+charge
+6 0.060
+
+charge
+7 0.060
+
+charge
+8 0.060
+
+charge
+9 0.418
+
+end
