@@ -5,6 +5,7 @@
 import numpy as np
 from CoolProp.CoolProp import PropsSI
 from scipy.optimize import minimize
+from scipy.optimize import brentq
 
 def nrtl(alpha, tau, t, x):
     '''
@@ -102,6 +103,21 @@ def dippr_acid(T):
 
     P = np.exp(c[0] + c[1]/T + c[2]*np.log(T) + c[3]*T**c[4])    
     return P
+
+def bubbleT_nrtl(P, x, alpha, params, T_guess=330.0):
+    def residual(T):
+        Psat = get_Psat(T)
+        tau = build_tau(params, T)
+        gamma = nrtl(alpha, tau, T, x)
+        return np.sum(gamma * x * Psat) - P
+
+    T_bub = brentq(residual, 280.0, 420.0)
+    Psat = get_Psat(T_bub)
+    tau = build_tau(params, T_bub)
+    gamma = nrtl(alpha, tau, T_bub, x)
+    xv = gamma * x * Psat / P
+    xv = xv / xv.sum()
+    return T_bub, xv
   
 def test_nrtl():
     ''' Test whether the NRTL function returns correct results. '''
