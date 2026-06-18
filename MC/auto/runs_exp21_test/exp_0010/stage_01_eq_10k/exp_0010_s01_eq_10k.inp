@@ -1,0 +1,128 @@
+# Run_Name
+exp_0010_s01_eq_10k
+
+# Sim_Type
+gemc_npt
+
+# Nbr_Species
+3
+
+# Molecule_Files
+../../../water.mcf 2252
+../../../ethanol.mcf 704
+../../../hexane.mcf 44
+
+# Fragment_Files
+../../../../data/species1/frag1/frag1.dat  1
+../../../../data/species2/frag1/frag1.dat  2
+../../../../data/species2/frag2/frag2.dat  3
+../../../../data/species2/frag3/frag3.dat  4
+../../../../data/species3/frag1/frag1.dat  5
+../../../../data/species3/frag2/frag2.dat  6
+../../../../data/species3/frag3/frag3.dat  7
+../../../../data/species3/frag4/frag4.dat  8
+../../../../data/species3/frag5/frag5.dat  9
+../../../../data/species3/frag6/frag6.dat  10
+
+# Box_Info
+2
+cubic
+71.4
+
+cubic
+300.0
+
+# VDW_Style
+lj cut_tail 12.0
+lj cut_tail 50.0
+
+# Charge_Style
+coul ewald 12.0 1E-5
+coul ewald 50.0 1E-5
+
+# Mixing_Rule
+lb
+
+# Temperature_Info
+329.55
+329.55
+
+# Pressure_Info
+1.01325
+1.01325
+
+# Move_Probability_Info
+
+# Prob_Translation
+0.35
+1.0 1.0 1.0
+20.0 20.0 20.0
+
+# Prob_Rotation
+0.25
+30.0 30.0 30.0
+180.0 180.0 180.0
+
+# Prob_Regrowth
+0.15
+0.0 0.3 0.7
+
+# Prob_Swap
+0.2
+cbmc cbmc cbmc
+
+# Prob_Volume
+0.05
+5000.0
+500000.0
+
+# Done_Probability_Info
+
+# Start_Type
+make_config 1802 563 35
+make_config 450 141 9
+
+# Run_Type
+equilibration 1000 100
+
+# Simulation_Length_Info
+units steps
+prop_freq 100
+coord_freq 1000
+run 10000
+
+# Property_Info 1
+energy_total
+pressure
+volume
+mass_density
+density
+nmols
+
+# Property_Info 2
+energy_total
+pressure
+volume
+mass_density
+density
+nmols
+
+# CBMC_Info
+kappa_ins 12
+kappa_dih 10
+rcut_cbmc 12.0 50.0
+
+# Rcutoff_Low
+0.8
+
+# Seed_Info
+31415 92653
+
+# Average_Info
+1
+
+# Pair_Energy
+true
+
+
+END

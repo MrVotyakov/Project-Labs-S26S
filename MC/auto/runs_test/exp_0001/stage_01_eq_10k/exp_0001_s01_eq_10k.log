@@ -1,0 +1,537 @@
+********************************************************************************
+                ______                                __                        
+               / ____/___ _______________ _____  ____/ /________ _              
+              / /   / __ `/ ___/ ___/ __ `/ __ \/ __  / ___/ __ `/              
+             / /___/ /_/ (__  |__  ) /_/ / / / / /_/ / /  / /_/ /               
+             \____/\__,_/____/____/\__,_/_/ /_/\__,_/_/   \__,_/                
+                                                                                
+********************************************************************************
+**********************************Log File**************************************
+********************************************************************************
+
+For any published work that uses Cassandra, cite the following reference:
+    Shah JK, Marin‐Rimoldi E, Mullen RG, Keene BP, Khan S,
+    Paluch AS, Rai N, Romanielo LL, Rosch TW, Yoo B, Maginn EJ.
+    Cassandra: An open source Monte Carlo package for molecular simulation.
+    Journal of Computational Chemistry. 2017, 38, 1727–1739.
+    http://dx.doi.org/10.1002/jcc.24807
+
+Run info
+********************************************************************************
+version: Cassandra Version 1.3.0
+inputfile: exp_0001_s01_eq_10k.inp
+name of run: exp_0001_s01_eq_10k
+date (mm/dd/yyyy): 05/21/2026
+time: 23:43:24
+machine: MacBook-Pro-Artem-3.local
+********************************************************************************
+
+Verbose log
+********************************************************************************
+Normal output to logfile
+********************************************************************************
+
+Simulation type
+********************************************************************************
+GEMC_NPT            
+********************************************************************************
+
+Copy input file
+********************************************************************************
+# Run_Name                                                                      
+exp_0001_s01_eq_10k                                                             
+                                                                                
+# Sim_Type                                                                      
+gemc_npt                                                                        
+                                                                                
+# Nbr_Species                                                                   
+3                                                                               
+                                                                                
+# Molecule_Files                                                                
+../../../water.mcf 315                                                          
+../../../ethanol.mcf 710                                                        
+../../../hexane.mcf 1975                                                        
+                                                                                
+# Fragment_Files                                                                
+../../../../data/species1/frag1/frag1.dat  1                                    
+../../../../data/species2/frag1/frag1.dat  2                                    
+../../../../data/species2/frag2/frag2.dat  3                                    
+../../../../data/species2/frag3/frag3.dat  4                                    
+../../../../data/species3/frag1/frag1.dat  5                                    
+../../../../data/species3/frag2/frag2.dat  6                                    
+../../../../data/species3/frag3/frag3.dat  7                                    
+../../../../data/species3/frag4/frag4.dat  8                                    
+../../../../data/species3/frag5/frag5.dat  9                                    
+../../../../data/species3/frag6/frag6.dat  10                                   
+                                                                                
+# Box_Info                                                                      
+2                                                                               
+cubic                                                                           
+71.4                                                                            
+                                                                                
+cubic                                                                           
+300.0                                                                           
+                                                                                
+# VDW_Style                                                                     
+lj cut_tail 12.0                                                                
+lj cut_tail 50.0                                                                
+                                                                                
+# Charge_Style                                                                  
+coul ewald 12.0 1E-5                                                            
+coul ewald 50.0 1E-5                                                            
+                                                                                
+# Mixing_Rule                                                                   
+lb                                                                              
+                                                                                
+# Temperature_Info                                                              
+329.55                                                                          
+329.55                                                                          
+                                                                                
+# Pressure_Info                                                                 
+1.01325                                                                         
+1.01325                                                                         
+                                                                                
+# Move_Probability_Info                                                         
+                                                                                
+# Prob_Translation                                                              
+0.35                                                                            
+1.0 1.0 1.0                                                                     
+20.0 20.0 20.0                                                                  
+                                                                                
+# Prob_Rotation                                                                 
+0.25                                                                            
+30.0 30.0 30.0                                                                  
+180.0 180.0 180.0                                                               
+                                                                                
+# Prob_Regrowth                                                                 
+0.15                                                                            
+0.0 0.3 0.7                                                                     
+                                                                                
+# Prob_Swap                                                                     
+0.2                                                                             
+cbmc cbmc cbmc                                                                  
+                                                                                
+# Prob_Volume                                                                   
+0.05                                                                            
+5000.0                                                                          
+500000.0                                                                        
+                                                                                
+# Done_Probability_Info                                                         
+                                                                                
+# Start_Type                                                                    
+make_config 252 568 1580                                                        
+make_config 63 142 395                                                          
+                                                                                
+# Run_Type                                                                      
+equilibration 1000 100                                                          
+                                                                                
+# Simulation_Length_Info                                                        
+units steps                                                                     
+prop_freq 100                                                                   
+coord_freq 1000                                                                 
+run 10000                                                                       
+                                                                                
+# Property_Info 1                                                               
+energy_total                                                                    
+pressure                                                                        
+volume                                                                          
+mass_density                                                                    
+density                                                                         
+nmols                                                                           
+                                                                                
+# Property_Info 2                                                               
+energy_total                                                                    
+pressure                                                                        
+volume                                                                          
+mass_density                                                                    
+density                                                                         
+nmols                                                                           
+                                                                                
+# CBMC_Info                                                                     
+kappa_ins 12                                                                    
+kappa_dih 10                                                                    
+rcut_cbmc 12.0 50.0                                                             
+                                                                                
+# Rcutoff_Low                                                                   
+0.8                                                                             
+                                                                                
+# Seed_Info                                                                     
+31415 92653                                                                     
+                                                                                
+# Average_Info                                                                  
+1                                                                               
+                                                                                
+# Pair_Energy                                                                   
+true                                                                            
+                                                                                
+                                                                                
+END                                                                             
+********************************************************************************
+
+Number of species
+********************************************************************************
+3
+********************************************************************************
+
+Box info
+********************************************************************************
+Number of simulation boxes     2
+Box 1 is CUBIC               
+ Each Side Of :       71.4000     Angstrom
+ Cell basis vector lengths in A,     71.4000      71.4000      71.4000
+ Cosine of angles alpha, beta, gamma     0.0000       0.0000       0.0000
+ Distance between box faces    71.4000      71.4000      71.4000
+ Box volume, A^3        363994.3440
+Box 2 is CUBIC               
+ Each Side Of :      300.0000     Angstrom
+ Cell basis vector lengths in A,    300.0000     300.0000     300.0000
+ Cosine of angles alpha, beta, gamma     0.0000       0.0000       0.0000
+ Distance between box faces   300.0000     300.0000     300.0000
+ Box volume, A^3      27000000.0000
+********************************************************************************
+
+Pair style
+********************************************************************************
+VDW style used is:   LJ             in box:  1
+ VDW sum style is:   cut_tail       in box:  1
+ rcut =    12.000 Angstrom
+VDW style used is:   LJ             in box:  2
+ VDW sum style is:   cut_tail       in box:  2
+ rcut =    50.000 Angstrom
+Charge style in box 1 is coul
+ Charge sum style is   ewald          in box:  1
+ Ewald real space cutoff is  12.000 Angstroms.
+ Ewald real space parameter is   0.283 inverse Angstroms
+ Ewald reciprocal cutoff is  1.9188 inverse Angstroms
+Charge style in box 2 is coul
+ Charge sum style is   ewald          in box:  2
+ Ewald real space cutoff is  50.000 Angstroms.
+ Ewald real space parameter is   0.068 inverse Angstroms
+ Ewald reciprocal cutoff is  0.4605 inverse Angstroms
+Pair interaction energy array storage enabled
+Lorentz-Berthelot mixing rule specified
+********************************************************************************
+
+Molecule info
+********************************************************************************
+ Reading molecular connectivity information
+ Species:            1
+ Molecular connectivity file: ../../../water.mcf                                                                                                      
+   3 atom(s) specified.
+   2 bond(s) specified.
+   1 angle(s) specified.
+   0 dihedral(s) specified.
+   0 improper(s) specified.
+   1 fragment(s) specified.
+   0 fragment bond(s) specified.
+ Reading molecular connectivity information
+ Species:            2
+ Molecular connectivity file: ../../../ethanol.mcf                                                                                                    
+   9 atom(s) specified.
+   8 bond(s) specified.
+   13 angle(s) specified.
+   12 dihedral(s) specified.
+   0 improper(s) specified.
+   3 fragment(s) specified.
+   2 fragment bond(s) specified.
+ Reading molecular connectivity information
+ Species:            3
+ Molecular connectivity file: ../../../hexane.mcf                                                                                                     
+   20 atom(s) specified.
+   19 bond(s) specified.
+   36 angle(s) specified.
+   45 dihedral(s) specified.
+   0 improper(s) specified.
+   6 fragment(s) specified.
+   5 fragment bond(s) specified.
+
+ Species  Max molecules
+ -------  -------------
+      1            315
+      2            710
+      3           1975
+
+ Species     1
+ -------------------------------------------------------------------------------
+ Atom parameters read
+ Bond parameters read
+ Angle parameters read
+ Dihedral parameters read
+ Improper parameters read
+ Intra molecule scaling factors for species            1
+  VDW 1-2 scaling factor       0.000
+  VDW 1-3 scaling factor       0.000
+  VDW 1-4 scaling factor       0.000
+  VDW 1-N scaling factor       1.000
+  Coulomb 1-2 scaling factor   0.000
+  Coulomb 1-3 scaling factor   0.000
+  Coulomb 1-4 scaling factor   0.000
+  Coulomb 1-N scaling factor   1.000
+ Total number of atoms in fragment     1  is   3
+ Fragment info read
+ Fragment file for fragment 1 is ../../../../data/species1/frag1/frag1.dat
+ -------------------------------------------------------------------------------
+
+ Species     2
+ -------------------------------------------------------------------------------
+ Atom parameters read
+ Bond parameters read
+ Angle parameters read
+ Dihedral parameters read
+ Improper parameters read
+ Intra molecule scaling factors for species            2
+  VDW 1-2 scaling factor       0.000
+  VDW 1-3 scaling factor       0.000
+  VDW 1-4 scaling factor       0.500
+  VDW 1-N scaling factor       1.000
+  Coulomb 1-2 scaling factor   0.000
+  Coulomb 1-3 scaling factor   0.000
+  Coulomb 1-4 scaling factor   0.500
+  Coulomb 1-N scaling factor   1.000
+ Total number of atoms in fragment     1  is   3
+ Total number of atoms in fragment     2  is   5
+ Total number of atoms in fragment     3  is   5
+ Fragment info read
+ Fragment file for fragment 2 is ../../../../data/species2/frag1/frag1.dat
+ Fragment file for fragment 3 is ../../../../data/species2/frag2/frag2.dat
+ Fragment file for fragment 4 is ../../../../data/species2/frag3/frag3.dat
+ -------------------------------------------------------------------------------
+
+ Species     3
+ -------------------------------------------------------------------------------
+ Atom parameters read
+ Bond parameters read
+ Angle parameters read
+ Dihedral parameters read
+ Improper parameters read
+ Intra molecule scaling factors for species            3
+  VDW 1-2 scaling factor       0.000
+  VDW 1-3 scaling factor       0.000
+  VDW 1-4 scaling factor       0.500
+  VDW 1-N scaling factor       1.000
+  Coulomb 1-2 scaling factor   0.000
+  Coulomb 1-3 scaling factor   0.000
+  Coulomb 1-4 scaling factor   0.500
+  Coulomb 1-N scaling factor   1.000
+ Total number of atoms in fragment     1  is   5
+ Total number of atoms in fragment     2  is   5
+ Total number of atoms in fragment     3  is   5
+ Total number of atoms in fragment     4  is   5
+ Total number of atoms in fragment     5  is   5
+ Total number of atoms in fragment     6  is   5
+ Fragment info read
+ Fragment file for fragment 5 is ../../../../data/species3/frag1/frag1.dat
+ Fragment file for fragment 6 is ../../../../data/species3/frag2/frag2.dat
+ Fragment file for fragment 7 is ../../../../data/species3/frag3/frag3.dat
+ Fragment file for fragment 8 is ../../../../data/species3/frag4/frag4.dat
+ Fragment file for fragment 9 is ../../../../data/species3/frag5/frag5.dat
+ Fragment file for fragment 10 is ../../../../data/species3/frag6/frag6.dat
+ -------------------------------------------------------------------------------
+
+ Fragment coord info
+ -------------------------------------------------------------------------------
+ library_coords array successfully allocated
+ Finished loading fragment coordinates from
+ ../../../../data/species1/frag1/frag1.dat
+ Finished loading fragment coordinates from
+ ../../../../data/species2/frag1/frag1.dat
+ ../../../../data/species2/frag2/frag2.dat
+ ../../../../data/species2/frag3/frag3.dat
+ Finished loading fragment coordinates from
+ ../../../../data/species3/frag1/frag1.dat
+ ../../../../data/species3/frag2/frag2.dat
+ ../../../../data/species3/frag3/frag3.dat
+ ../../../../data/species3/frag4/frag4.dat
+ ../../../../data/species3/frag5/frag5.dat
+ ../../../../data/species3/frag6/frag6.dat
+ -------------------------------------------------------------------------------
+********************************************************************************
+
+Temperature
+********************************************************************************
+Temperature of box 1 is 329.550 K
+Temperature of box 2 is 329.550 K
+********************************************************************************
+
+Minimum distance cutoff
+********************************************************************************
+MC low cutoff distance is   0.800    Angstrom
+********************************************************************************
+
+Start type
+********************************************************************************
+Initial configuration for box 1 will be made
+ Will insert     252  molecules of species   1
+ Will insert     568  molecules of species   2
+ Will insert    1580  molecules of species   3
+Initial configuration for box 2 will be made
+ Will insert      63  molecules of species   1
+ Will insert     142  molecules of species   2
+ Will insert     395  molecules of species   3
+********************************************************************************
+
+Seed info
+********************************************************************************
+The starting seeds are:               31415               92653
+********************************************************************************
+
+Pressure
+********************************************************************************
+Pressure of box 1 is     1.013 bar =  0.610193E-02 amu / (A ps^2)
+Pressure of box 2 is     1.013 bar =  0.610193E-02 amu / (A ps^2)
+********************************************************************************
+
+Move probabilities
+********************************************************************************
+Probability for translation                0.350000
+ Maximum displacement width for species  1 in box  1  is      1.00000
+ Maximum displacement width for species  2 in box  1  is      1.00000
+ Maximum displacement width for species  3 in box  1  is      1.00000
+ Maximum displacement width for species  1 in box  2  is     20.00000
+ Maximum displacement width for species  2 in box  2  is     20.00000
+ Maximum displacement width for species  3 in box  2  is     20.00000
+Probability for rotation                   0.250000
+ The rotational width for the species    1 in box  1   is      0.5236 radians
+ The rotational width for the species    2 in box  1   is      0.5236 radians
+ The rotational width for the species    3 in box  1   is      0.5236 radians
+ The rotational width for the species    1 in box  2   is      3.1416 radians
+ The rotational width for the species    2 in box  2   is      3.1416 radians
+ The rotational width for the species    3 in box  2   is      3.1416 radians
+Probability for regrowth                   0.150000
+ Cumulative probability for regrowth of species     1  is   0.000000
+ Cumulative probability for regrowth of species     2  is   0.300000
+ Cumulative probability for regrowth of species     3  is   1.000000
+Probability for particle swap              0.200000
+ Species 1 will be inserted using CBMC
+ Species 2 will be inserted using CBMC
+ Species 3 will be inserted using CBMC
+ Number of insertable species is    3
+  By default, box_out will be selected according to its mole fraction
+  By default, species will be selected according to its mole fraction in box_out
+Probability for volume move                0.050000
+ Maximum volume displacement for box  1 is   5000.000  A^3
+ Maximum volume displacement for box  2 is 500000.000  A^3
+ Volume moves will be performed in actual volumes
+Number of moves is :   5
+********************************************************************************
+
+CBMC info
+********************************************************************************
+Kappa for first fragment insertion          12
+Kappa for dihedral selection                10
+ Cutoff for CBMC for box 1 is        12.00
+ Cutoff for CBMC for box 2 is        50.00
+********************************************************************************
+
+Simulation length info
+********************************************************************************
+Thermodynamic quantities will be computed every                  100 Steps     
+Coordinates will be written to file every                       1000 Steps     
+ movie header file for box   1 is      exp_0001_s01_eq_10k.box1.H
+ movie_XYZ file for box      1 is      exp_0001_s01_eq_10k.box1.xyz
+ movie header file for box   2 is      exp_0001_s01_eq_10k.box2.H
+ movie_XYZ file for box      2 is      exp_0001_s01_eq_10k.box2.xyz
+The simulation will be run for                               10000 Steps     
+Instantaneous values will be written every                       100 Steps     
+********************************************************************************
+
+Property info
+********************************************************************************
+Total number of property files to be written is     1   for box 1
+ Maximum number of properties per file is   10
+ Writing the name of the property files and the corresponding property output
+ Property file    1   is  exp_0001_s01_eq_10k.box1.prp
+ Properties output in these files are
+ Energy_Total
+ Pressure
+ Volume
+ Mass_Density
+ Density_1
+ Density_2
+ Density_3
+ Nmols_1
+ Nmols_2
+ Nmols_3
+Total number of property files to be written is     1   for box 2
+ Maximum number of properties per file is   10
+ Writing the name of the property files and the corresponding property output
+ Property file    1   is  exp_0001_s01_eq_10k.box2.prp
+ Properties output in these files are
+ Energy_Total
+ Pressure
+ Volume
+ Mass_Density
+ Density_1
+ Density_2
+ Density_3
+ Nmols_1
+ Nmols_2
+ Nmols_3
+********************************************************************************
+
+Run type
+********************************************************************************
+ The input run type is equilibration
+ Update frequency is         1000
+ Update frequency for adjusting maximum volume displacement is
+         100
+********************************************************************************
+
+********************************************************************************
+************************ Begin Cassandra simulation ****************************
+********************************************************************************
+
+Initial configuration
+********************************************************************************
+ Inserting          252 molecules of species            1
+ Inserting          568 molecules of species            2
+ Inserting         1580 molecules of species            3
+ Inserting           63 molecules of species            1
+ Inserting          142 molecules of species            2
+ Inserting          395 molecules of species            3
+********************************************************************************
+
+Charge neutrality check
+********************************************************************************
+ Species 1 has charge:                  0.00000000
+ Species 2 has charge:                  0.00000000
+ Species 3 has charge:                  0.00000000
+
+ Box     1 has charge:                  0.00000000
+ Box     2 has charge:                  0.00000000
+********************************************************************************
+
+Compute total energy
+********************************************************************************
+
+ Energy components for box 1     kJ/mol-Extensive
+ ---------------------------------------------------------------------
+ Total system energy                  2785471.177
+ Intra molecular energy               2012290.123
+   Bond energy                              0.000
+   Bond angle energy                  1315958.492
+   Dihedral angle energy                48564.432
+   Improper angle energy                    0.000
+   Intra molecule vdw                  628302.978
+   Intra molecule q                     19464.221
+ Inter molecular energy                773181.055
+   Inter molecule vdw                  778761.136
+   Long range correction                -2195.282
+   Inter molecule q                    204132.540
+   Reciprocal ewald                      2901.215
+   Self ewald                         -210418.555
+ ---------------------------------------------------------------------
+   Number of reciprocal vectors             22493
+
+
+ Energy components for box 2     kJ/mol-Extensive
+ ---------------------------------------------------------------------
+ Total system energy                   439047.413
+ Intra molecular energy                439007.785
+   Bond energy                              0.000
+   Bond angle energy                   325926.694
+   Dihedral angle energy                10184.182
+   Improper angle energy                    0.000
+   Intra molecule vdw                   97910.423
+   Intra molecule q                      4986.486
+ Inter molecular energy                    39.628

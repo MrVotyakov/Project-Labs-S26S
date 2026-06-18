@@ -1,0 +1,273 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+% ---------- Theme ----------
+\usetheme{Madrid}
+\usecolortheme{default}
+
+% ---------- Packages ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian, english]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% ---------- Code style ----------
+\lstdefinestyle{textstyle}{
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{gray!10},
+    frame=single,
+    breaklines=true,
+    columns=fullflexible
+}
+
+\lstset{style=textstyle}
+
+% ---------- Title ----------
+\title[VLE в Cassandra]{Моделирование VLE и азеотропной области \\ в системе вода--этанол--н-гексан}
+\author{Артём Вотяков}
+\institute{Cassandra Monte Carlo}
+\date{\today}
+
+\begin{document}
+
+% ============================================================
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% ============================================================
+\begin{frame}{Цель проекта}
+
+\textbf{Цель:} исследовать равновесие жидкость--пар в тройной системе
+вода--этанол--н-гексан и сравнить результаты Monte Carlo моделирования
+с экспериментальными точками.
+
+\vspace{0.4cm}
+
+\textbf{Что ищем:}
+
+\begin{itemize}
+    \item состав жидкой фазы:
+    \[
+        x_i
+    \]
+    \item состав паровой фазы:
+    \[
+        y_i
+    \]
+    \item условие VLE:
+    \[
+        \mu_i^{liq} = \mu_i^{vap}
+    \]
+    \item условие азеотропа:
+    \[
+        x_i \approx y_i
+    \]
+\end{itemize}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}[fragile]{Используемые инструменты}
+
+Для моделирования используется пакет \textbf{Cassandra Monte Carlo}.
+
+\vspace{0.3cm}
+
+\textbf{Метод:}
+
+\begin{lstlisting}
+GEMC-NPT = Gibbs Ensemble Monte Carlo
+\end{lstlisting}
+
+\vspace{0.2cm}
+
+\textbf{Почему GEMC:}
+
+\begin{itemize}
+    \item моделирует две фазы без явной поверхности раздела;
+    \item box 1 соответствует жидкой фазе;
+    \item box 2 соответствует паровой фазе;
+    \item молекулы переносятся между фазами через swap-ходы;
+    \item объёмы фаз меняются независимо.
+\end{itemize}
+
+\end{frame}
+
+% ============================================================
+\begin{frame}[fragile]{Система и компоненты}
+
+\textbf{Моделируемая смесь:}
+
+\vspace{0.3cm}
+
+\begin{table}
+\centering
+\begin{tabular}{ccc}
+\toprule
+\textbf{Species} & \textbf{Компонент} & \textbf{Файл модели} \\
+\midrule
+1 & вода & \texttt{water.mcf} \\
+2 & этанол & \texttt{ethanol.mcf} \\
+3 & н-гексан & \texttt{hexane.mcf} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.3cm}
+
+Для каждой экспериментальной точки из серии жкспериментальных точек задаются жидкие мольные доли:
+\end{frame}
+
+% ============================================================
+\begin{frame}[fragile]{Начальные условия моделирования}
+
+Для каждой строки CSV создаётся отдельный расчёт.
+
+\vspace{0.25cm}
+
+\begin{table}
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Фаза} & \textbf{Вода} & \textbf{Этанол} & \textbf{Гексан} & \textbf{Всего} \\
+\midrule
+box 1, жидкость & по $x_i$ & по $x_i$ & по $x_i$ & 2400 \\
+box 2, пар      & по $x_i$ & по $x_i$ & по $x_i$ & 600 \\
+\midrule
+Итого & & & & 3000 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.25cm}
+
+Газовая фаза получает тот же начальный состав, но меньшее число частиц.
+
+\vspace{0.25cm}
+
+\textbf{Размеры боксов:}
+
+\begin{lstlisting}
+box1 = 71.4 Angstrom
+box2 = 300.0 Angstrom
+\end{lstlisting}
+
+\textbf{Текущие условия:}
+
+\begin{lstlisting}
+T = 329.55 K
+P = 1.01325 bar
+\end{lstlisting}
+
+
+\end{frame}
+
+% ============================================================
+\begin{frame}[fragile]{Потенциалы и силовое поле}
+
+В модели учитываются межмолекулярные взаимодействия:
+
+\begin{lstlisting}
+Lennard-Jones 12-6
+Coulomb + Ewald summation
+Lorentz-Berthelot mixing rule
+\end{lstlisting}
+
+\vspace{0.2cm}
+
+\textbf{Lennard-Jones потенциал:}
+
+\[
+    U_{LJ}(r)
+    =
+    4 \varepsilon
+    \left[
+        \left( \frac{\sigma}{r} \right)^{12}
+        -
+        \left( \frac{\sigma}{r} \right)^6
+    \right]
+\]
+
+\textbf{Кулоновский вклад:}
+
+\[
+    U_{coul}(r)
+    =
+    \frac{q_i q_j}{4 \pi \varepsilon_0 r}
+\]
+
+\textbf{Правило смешения Lorentz--Berthelot:}
+
+\[
+    \sigma_{ij}
+    =
+    \frac{\sigma_i + \sigma_j}{2},
+    \qquad
+    \varepsilon_{ij}
+    =
+    \sqrt{\varepsilon_i \varepsilon_j}
+\]
+
+\end{frame}
+
+
+% ============================================================
+\begin{frame}{Тернарная диаграмма}
+
+Траектория состава строится на тернарной диаграмме.
+
+\vspace{0.3cm}
+
+БУДТЕТ ФОТО
+\end{frame}
+
+% ============================================================
+\begin{frame}[fragile]{Что сравниваем с экспериментом}
+
+Для каждой экспериментальной точки сравниваются:
+
+\begin{lstlisting}
+x_exp  vs x_model
+y_exp  vs y_model
+K_exp  vs K_model
+\end{lstlisting}
+
+\vspace{0.3cm}
+
+Основной вопрос:
+
+\[
+    \text{сходится ли GEMC-модель к экспериментальному VLE?}
+\]
+
+\vspace{0.3cm}
+
+Для азеотропной области дополнительно проверяется:
+
+\[
+    |x_i - y_i| \rightarrow 0
+\]
+
+\[
+    K_i \rightarrow 1
+\]
+
+\vspace{0.3cm}
+
+Если модель стабильно отличается от эксперимента, возможные причины:
+
+\begin{itemize}
+    \item параметры силового поля;
+    \item правило смешения;
+    \item недостаточная длина расчёта;
+    \item плохая статистика swap/regrowth ходов.
+\end{itemize}
+
+\end{frame}
+
+
+\end{document}

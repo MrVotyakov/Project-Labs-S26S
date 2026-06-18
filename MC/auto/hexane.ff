@@ -1,0 +1,220 @@
+atomtypes
+4
+
+begin atom-atomtype
+1 C2_hexane
+2 C2_hexane
+3 C2_hexane
+4 C2_hexane
+5 C3_hexane
+6 C3_hexane
+7 H2_hexane
+8 H2_hexane
+9 H2_hexane
+10 H2_hexane
+11 H2_hexane
+12 H2_hexane
+13 H2_hexane
+14 H2_hexane
+15 H3_hexane
+16 H3_hexane
+17 H3_hexane
+18 H3_hexane
+19 H3_hexane
+20 H3_hexane
+end atom-atomtype
+
+vdwtype LJ
+dihedraltype OPLS
+scaling_1_4_vdw 0.5
+scaling_1_4_charge 0.5
+
+nonbonded
+C3_hexane
+Sigma 3.500
+Epsilon 33.21
+atom_type_charge -0.180
+
+nonbonded
+C2_hexane
+Sigma 3.500
+Epsilon 33.21
+atom_type_charge -0.120
+
+nonbonded
+H3_hexane
+Sigma 2.500
+Epsilon 15.10
+atom_type_charge 0.060
+
+nonbonded
+H2_hexane
+Sigma 2.500
+Epsilon 15.10
+atom_type_charge 0.060
+
+bonds
+C2_hexane C2_hexane
+Length 1.529
+Constant fixed
+
+bonds
+C2_hexane C3_hexane
+Length 1.529
+Constant fixed
+
+bonds
+C2_hexane H2_hexane
+Length 1.090
+Constant fixed
+
+bonds
+C3_hexane H3_hexane
+Length 1.090
+Constant fixed
+
+angles
+C2_hexane C2_hexane C2_hexane
+Angle 112.7
+Constant 29362.9
+
+angles
+C2_hexane C2_hexane C3_hexane
+Angle 112.7
+Constant 29362.9
+
+angles
+C2_hexane C2_hexane H2_hexane
+Angle 110.7
+Constant 18870.7
+
+angles
+C3_hexane C2_hexane H2_hexane
+Angle 110.7
+Constant 18870.7
+
+angles
+C2_hexane C3_hexane H3_hexane
+Angle 110.7
+Constant 18870.7
+
+angles
+H2_hexane C2_hexane H2_hexane
+Angle 107.8
+Constant 16606.2
+
+angles
+H3_hexane C3_hexane H3_hexane
+Angle 107.8
+Constant 16606.2
+
+dihedrals
+C2_hexane C2_hexane C2_hexane C3_hexane
+a0 0.000000
+a1 2.719600
+a2 -0.104600
+a3 0.418400
+
+dihedrals
+C2_hexane C2_hexane C2_hexane H2_hexane
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.627600
+
+dihedrals
+C2_hexane C2_hexane C3_hexane H3_hexane
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.627600
+
+dihedrals
+C2_hexane C2_hexane C2_hexane C2_hexane
+a0 0.000000
+a1 2.719600
+a2 -0.104600
+a3 0.418400
+
+dihedrals
+C3_hexane C2_hexane C2_hexane H2_hexane
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.627600
+
+dihedrals
+H2_hexane C2_hexane C2_hexane H2_hexane
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.627600
+
+dihedrals
+H2_hexane C2_hexane C3_hexane H3_hexane
+a0 0.000000
+a1 0.000000
+a2 0.000000
+a3 0.627600
+
+charge
+1 -0.120
+
+charge
+2 -0.120
+
+charge
+3 -0.120
+
+charge
+4 -0.120
+
+charge
+5 -0.180
+
+charge
+6 -0.180
+
+charge
+7 0.060
+
+charge
+8 0.060
+
+charge
+9 0.060
+
+charge
+10 0.060
+
+charge
+11 0.060
+
+charge
+12 0.060
+
+charge
+13 0.060
+
+charge
+14 0.060
+
+charge
+15 0.060
+
+charge
+16 0.060
+
+charge
+17 0.060
+
+charge
+18 0.060
+
+charge
+19 0.060
+
+charge
+20 0.060
+
+end

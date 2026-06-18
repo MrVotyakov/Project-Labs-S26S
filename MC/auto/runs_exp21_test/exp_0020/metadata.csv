@@ -1,0 +1,4 @@
+experiment_id,component,mole_fraction,liquid_count,vapor_count,total_count
+0020,water,0.4783900000,1148,287,1435
+0020,ethanol,0.2982700000,716,179,895
+0020,hexane,0.2233400000,536,134,670
